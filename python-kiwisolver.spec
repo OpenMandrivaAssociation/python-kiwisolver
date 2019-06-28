@@ -1,8 +1,8 @@
 %global           pypi_name kiwisolver
-%define srcname   kiwisolver
+%define srcname   kiwi
 
 Name:             python-kiwisolver
-Version:          1.0.1
+Version:	1.1.0
 Release:          1
 
 Summary:          A Cassowary constraint solving algorithm
@@ -10,7 +10,7 @@ License:          BSD
 Group:            Development/Python
 
 URL:              https://pypi.org/project/kiwisolver/
-Source0:          https://github.com/nucleic/kiwi/archive/%{srcname}-%{version}.tar.gz
+Source0:	https://github.com/nucleic/kiwi/archive/%{version}.tar.gz
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3egg(setuptools)
 
@@ -59,12 +59,12 @@ pushd %{py3dir}
 popd
 
 %files -n python2-kiwisolver
-%doc README.rst COPYING.txt
+%doc README.rst
 %{python2_sitearch}/%{pypi_name}-%{version}-py?.?.egg-info
 %{python2_sitearch}/%{pypi_name}*.so
 
 %files -n python-kiwisolver
-%doc README.rst COPYING.txt
+%doc README.rst
 %{python3_sitearch}/%{pypi_name}-%{version}-py?.?.egg-info
 %{python3_sitearch}/%{pypi_name}*.so
 
