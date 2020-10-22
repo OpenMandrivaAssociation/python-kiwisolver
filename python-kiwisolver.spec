@@ -1,5 +1,6 @@
 %global           pypi_name kiwisolver
 %define srcname   kiwi
+%define debug_package %nil
 
 Name:             python-kiwisolver
 Version:	1.1.0
@@ -25,43 +26,17 @@ gaining a 40x improvement. Memory savings are consistently > 5x. In
 addition to the C++ solver, Kiwi ships with hand-rolled Python
 bindings.
 
-%package -n python2-kiwisolver
-Summary:        Python3 implementation of Kiwi
-Group:          Development/Python
-BuildRequires:  pkgconfig(python2)
-BuildRequires:  pythonegg(setuptools)
-
-
-%description -n python2-kiwisolver
-%{summary}.
-
-
 %prep
 %setup -q -n %{srcname}-%{version}
-
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
-cp -a . %{py3dir}
-
 %build
-
-%py2_build
-pushd %{py3dir} 
 %py3_build
-popd
 
 
 %install
-%py2_install
-pushd %{py3dir} 
 %py3_install
-popd
-
-%files -n python2-kiwisolver
-%doc README.rst
-%{python2_sitearch}/%{pypi_name}-%{version}-py?.?.egg-info
-%{python2_sitearch}/%{pypi_name}*.so
 
 %files -n python-kiwisolver
 %doc README.rst
