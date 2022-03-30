@@ -4,7 +4,7 @@
 
 Name:             python-kiwisolver
 Version:	1.1.0
-Release:          2
+Release:          3
 
 Summary:          A Cassowary constraint solving algorithm
 License:          BSD
@@ -40,7 +40,7 @@ rm -rf %{pypi_name}.egg-info
 
 %files -n python-kiwisolver
 %doc README.rst
-%{python3_sitearch}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python3_sitearch}/%{pypi_name}-%{version}-py*.*.egg-info
 %{python3_sitearch}/%{pypi_name}*.so
 
 
