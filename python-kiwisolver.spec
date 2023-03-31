@@ -4,7 +4,7 @@
 
 Name:             python-kiwisolver
 Version:	1.1.0
-Release:          3
+Release:          4
 
 Summary:          A Cassowary constraint solving algorithm
 License:          BSD
