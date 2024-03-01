@@ -11,9 +11,9 @@ Group:            Development/Python
 
 URL:              https://pypi.org/project/kiwisolver/
 Source0:	https://github.com/nucleic/kiwi/releases/download/%{version}/%{pypi_name}-%{version}.tar.gz
-Patch1:		kiwisolver-1.4.5-setup.patch
 
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python3dist(setuptools-scm)
 BuildRequires:	python3egg(setuptools)
 BuildRequires:	python3dist(cppy)
 
