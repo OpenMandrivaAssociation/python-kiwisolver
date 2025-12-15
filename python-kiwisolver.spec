@@ -2,8 +2,8 @@
 %define debug_package %nil
 
 Name:             python-kiwisolver
-Version:	1.4.5
-Release:          5
+Version:	1.4.9
+Release:          1
 
 Summary:          A Cassowary constraint solving algorithm
 License:          BSD
@@ -12,10 +12,11 @@ Group:            Development/Python
 URL:              https://pypi.org/project/kiwisolver/
 Source0:	https://github.com/nucleic/kiwi/releases/download/%{version}/%{pypi_name}-%{version}.tar.gz
 
+BuildSystem:	python
 BuildRequires:	pkgconfig(python3)
-BuildRequires:	python3dist(setuptools-scm)
-BuildRequires:	python3egg(setuptools)
-BuildRequires:	python3dist(cppy)
+BuildRequires:	python%{pyver}dist(setuptools-scm)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(cppy)
 
 %description
 Kiwi is an efficient C++ implementation of the Cassowary
@@ -28,20 +29,7 @@ gaining a 40x improvement. Memory savings are consistently > 5x. In
 addition to the C++ solver, Kiwi ships with hand-rolled Python
 bindings.
 
-%prep
-%autosetup -p1 -n %{pypi_name}-%{version}
-#rm -f pyproject.toml
-
-%build
-%py_build
-
-
-%install
-%py_install %{pypi_name}
-
-%files -n python-kiwisolver
+%files
 %doc README.rst
-%{python3_sitearch}/%{pypi_name}-%{version}.dist-info
-%{python3_sitearch}/%{pypi_name}
-
-
+%{python_sitearch}/%{pypi_name}-%{version}.dist-info
+%{python_sitearch}/%{pypi_name}
