@@ -2,7 +2,7 @@
 %define debug_package %nil
 
 Name:             python-kiwisolver
-Version:	1.4.9
+Version:	1.5.0
 Release:          1
 
 Summary:          A Cassowary constraint solving algorithm
