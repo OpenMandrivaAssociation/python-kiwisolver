@@ -2,7 +2,7 @@
 %define debug_package %nil
 
 Name:             python-kiwisolver
-Version:	1.5.0
+Version:	1.5.1
 Release:          1
 
 Summary:          A Cassowary constraint solving algorithm
@@ -14,9 +14,15 @@ Source0:	https://github.com/nucleic/kiwi/releases/download/%{version}/%{pypi_nam
 
 BuildSystem:	python
 BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(setuptools-scm)
 BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 BuildRequires:	python%{pyver}dist(cppy)
+
+%build -p
+# setuptools-scm writes this version into the C++ header. The sdist is not a checkout.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %description
 Kiwi is an efficient C++ implementation of the Cassowary
