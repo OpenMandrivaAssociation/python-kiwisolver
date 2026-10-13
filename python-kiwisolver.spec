@@ -36,6 +36,6 @@ addition to the C++ solver, Kiwi ships with hand-rolled Python
 bindings.
 
 %files
-%doc README.rst
+%doc README.md
 %{python_sitearch}/%{pypi_name}-%{version}.dist-info
 %{python_sitearch}/%{pypi_name}
